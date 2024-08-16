@@ -10,17 +10,28 @@ public class PlayerControl : MonoBehaviour
     public Vector3 moveDir;
     private Rigidbody rigid;
     public GameObject missile;
+    public Transform otherPlayer;
     public Transform shootPoint, shootRotation;
     public string inputCode, enemyInputCode;
 
     public int lifes;
     public int score;
+    public int rounds;
 
     public TextMeshProUGUI lifesText;
     public TextMeshProUGUI scoreText;
 
-    public Vector3 originalPoint;
-    public Quaternion originalRotation;
+    public Vector3 originalPoint, originalOtherPoint;
+    public Quaternion originalRotation, originalOtherRotation;
+
+    public RoundControl _roundControl;
+
+    public TextMeshProUGUI Win;
+    public TextMeshProUGUI Lose;
+
+    public GameObject otherPlayerObject;
+    public PlayerControl otherPlayerControl;
+
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +39,12 @@ public class PlayerControl : MonoBehaviour
         rigid = GetComponent<Rigidbody>();
         originalPoint = transform.position;
         originalRotation = transform.rotation;
+        rounds = 1;
+        Canvas.ForceUpdateCanvases();
+        Win.gameObject.SetActive(false);
+        Lose.gameObject.SetActive(false);
+        otherPlayerControl = otherPlayerObject.GetComponent<PlayerControl>();
+        
     }
     public void Update()
     {
@@ -56,25 +73,47 @@ public class PlayerControl : MonoBehaviour
         scoreText.text = score.ToString();
         
     }
-
+    //Void for bullets and scores, and transforms
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Bullet" + enemyInputCode)
         {
             Destroy(other.gameObject);
+            GameObject[] clones = GameObject.FindGameObjectsWithTag("Bullet" + enemyInputCode);
+            foreach (GameObject clone in clones)
+            {
+                Destroy(clone);
+            }
             transform.position = originalPoint;
             transform.rotation = originalRotation;
+            otherPlayer.transform.position = originalOtherPoint;
+            otherPlayer.transform.rotation = originalOtherRotation;
             lifes--;
             if(lifes >= 0)
             {
                 score++;
+                _roundControl.rounds++;
+                
             }
             if (lifes <= 0)
             {
                 print("GameOver");
+                LosePlayer();
                 lifes = 0;
+                otherPlayerControl.WinPlayer();
             }
             
         }
+    }
+
+    //Void win, know that the player won
+    public void WinPlayer()
+    {
+        Win.gameObject.SetActive(true);
+    }
+    //Void lose, know that the player lost
+    public void LosePlayer()
+    {
+        Lose.gameObject.SetActive(true);
     }
 }

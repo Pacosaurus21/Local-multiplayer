@@ -386,13 +386,18 @@ MonoBehaviour:
   shootForce: 10
   moveDir: {x: 0, y: 0, z: 0}
   missile: {fileID: 8712675917733734346, guid: 498695ad30e8d694eadfe222c46c89a4, type: 3}
+  otherPlayer: {fileID: 0}
   shootPoint: {fileID: 8909122316790470372}
   shootRotation: {fileID: 7932711117895839547}
   inputCode: P1
   enemyInputCode: P2
   lifes: 25
   score: 0
+  rounds: 0
   lifesText: {fileID: 0}
   scoreText: {fileID: 0}
-  originalPoint: {x: 0, y: 0, z: 0}
+  roundsText: {fileID: 0}
+  originalPoint: {x: 15, y: 1.5, z: -18}
+  originalOtherPoint: {x: -15, y: 1.5, z: 18}
   originalRotation: {x: 0, y: 0, z: 0, w: 0}
+  originalOtherRotation: {x: 0, y: 180, z: 0, w: 0}
