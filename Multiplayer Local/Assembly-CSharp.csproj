@@ -840,13 +840,13 @@
       <Project>{F7D85286-4A7F-0CFD-B9C6-AE4023F096A7}</Project>
       <Name>Unity.ProBuilder.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.ProBuilder.AddOns.Editor.csproj">
-      <Project>{E38FD4F8-72C5-05CB-D7FB-87307C0EAA1B}</Project>
-      <Name>Unity.ProBuilder.AddOns.Editor</Name>
-    </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.Flow.csproj">
       <Project>{F59C709D-C04B-B963-5F1A-888400B4C75B}</Project>
       <Name>Unity.VisualScripting.Flow</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.ProBuilder.AddOns.Editor.csproj">
+      <Project>{E38FD4F8-72C5-05CB-D7FB-87307C0EAA1B}</Project>
+      <Name>Unity.ProBuilder.AddOns.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.Core.csproj">
       <Project>{4C0BB962-2A79-9B0B-E9DC-18AA286D09B1}</Project>
