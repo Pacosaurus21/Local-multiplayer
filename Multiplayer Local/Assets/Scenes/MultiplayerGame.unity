@@ -4069,6 +4069,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1162580668}
     - target: {fileID: 2877479241365366749, guid: 3876994064b899d4ba7756a0e90541de, type: 3}
+      propertyPath: lifes
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2877479241365366749, guid: 3876994064b899d4ba7756a0e90541de, type: 3}
       propertyPath: lifesText
       value: 
       objectReference: {fileID: 895763233}
@@ -4872,6 +4876,10 @@ PrefabInstance:
       propertyPath: Lose
       value: 
       objectReference: {fileID: 1779137212}
+    - target: {fileID: 1623807337142031843, guid: a0ce87296d2cc5e4ba9996b2943fc2ec, type: 3}
+      propertyPath: lifes
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 1623807337142031843, guid: a0ce87296d2cc5e4ba9996b2943fc2ec, type: 3}
       propertyPath: lifesText
       value: 
